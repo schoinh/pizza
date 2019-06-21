@@ -13,7 +13,7 @@ On this web site, the user can choose toppings and a size for one or more pizzas
 | :-------------     | :------------- | :------------- |
 | **Creates a new pizza through a constructor** | var pizza1 = new Pizza ("large", ["cheese", "sausage"]) | pizza1 = { size : "large", toppings: ["cheese", "sausage"], cost: undefined} |
 | **Calculates cost through a method** | pizza1.determineCost() | pizza1.cost = 17 |
-| **Puts multiple pizzas in a given order** | newOrder.addPizza(pizza2) | newOrder = { pizzas: [pizza1, pizza2], total: undefined} |
+| **Adds multiple pizzas, with unique IDs, into a given order** | newOrder.addPizza(pizza2) | newOrder = { pizzas: [pizza1, pizza2], total: undefined}  pizza2.id = 1|
 | **Calculates total cost for a given order** | newOrder.addPizza(pizza2) | newOrder = { pizzas: [pizza1, pizza2], total: 34} |
 
 ## Setup/Installation Requirements
