@@ -14,7 +14,7 @@
         <h5>Making You and Your Cats' Pizza Dreams Come True Since 2018</h5>
       </div>
       <p>
-        <span class="first-letter">W</span>elcome to Bagheera's Pizzeria, a pet-friendly destination for pizza lovers. Our pizzas are made with vegetables <i>and</i> meat straight from our farm. If we don't grow it ourselves, we source local and organic whenever possible.
+        <span class="first-letter">W</span>elcome to Bagheera's Pizzeria, a pet-friendly destination for pizza lovers. Our pizzas are made with vegetables <i>and</i> meat straight from our farm. If we don't grow it ourselves, we source local and organic whenever possible. Every pizza is custom made to order.
       </p><p>
         <span class="first-letter">I</span>n our kitchen, each ingredient is carefully inspected and the creation of each pizza closely supervised by Bagheera Choi, a 2-year-old black cat with a most discerning palate. Each finished creation is taste-tested in the kitchen by Caramel Choi, a 1-year-old brown tabby cat who <s>will eat literally anything</s> is the winner of the prestigious 2019 Feline Foodie Award. 
       </p>
@@ -22,9 +22,9 @@
         Stop in today and taste for yourself why humans and non-humans alike call our pizzas the CAT'S MEOW.
       </p>
       <hr>
-      <h5>We Deliver!</h5>
-      <p>Place an order online for pickup or delivery.</p>
-      <button class="btn btn-danger" id="order-start">Place Order</button>
+      <h5>Order Ahead!</h5>
+      <p>Place an order online for pickup.</p>
+      <button class="btn btn-danger" id="order-start">Start Your Order</button>
       <div class="row">
         <div class="col col-lg-6 build-pizza">
           <div class="card">
@@ -33,17 +33,17 @@
               <form class="build-pizza">
                 <div class="form-group">
                   <select class="form-control" id="size">
-                    <option selected>Choose a Size</option>
-                    <option value="small">Small (9") - $6</option>
-                    <option value="medium">Medium (12") - $9
+                    <option value="none" selected>Choose a Size</option>
+                    <option value="S">Small (9") - $6</option>
+                    <option value="M">Medium (12") - $9
                     </option>
-                    <option value="large">Large (14") - $12</option>
-                    <option value="xLarge">X-Large (16") - $15</option>
+                    <option value="L">Large (14") - $12</option>
+                    <option value="XL">X-Large (16") - $15</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <select class="form-control" id="crust">
-                    <option value="standard">Classic Crust</option>
+                    <option value="classic">Classic Crust</option>
                     <option value="gluten-free">Gluten-Free Crust - Add $1.50
                     </option>
                   </select>
@@ -59,7 +59,7 @@
                       <input type="checkbox" name="basic-toppings" value="black-olives"> Black Olives<br>
                     </div>
                     <div class="col">
-                      <input type="checkbox" name="basic-toppings" value="green-peppers"> Green peppers<br>
+                      <input type="checkbox" name="basic-toppings" value="green peppers"> Green peppers<br>
                       <input type="checkbox" name="basic-toppings" value="onions"> Onions<br>
                       <input type="checkbox" name="basic-toppings" value="mushrooms"> Mushrooms<br>
                       <input type="checkbox" name="basic-toppings" value="pineapple"> Pineapple<br>
@@ -84,8 +84,11 @@
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-danger">Add to Order</button>
+                <button type="submit" class="btn btn-secondary">Add to Order</button>
               </form>
+              <div class="alert alert-danger" id="size-alert">
+                Please choose a size.
+              </div>
             </div>
           </div>
         </div>
@@ -93,6 +96,32 @@
           <div class="card">
             <div class="card-body">
               <h4>Your Order</h4>
+              <hr>
+              <p id="ordered-items"></p>
+              <div id="total-print">
+                <hr>
+                <h6>Total: <span id="order-total"></span></h6>
+                <h6>Sales Tax (10%): <span id="tax"></span></h6>
+                <h5>Total + Tax: <span id="final-total"></span></h6>
+              </div>
+              <hr>
+              <div id="submit-order">
+                <form id="contact-info">
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Name" id="name">
+                    </div>
+                    <div class="col">
+                      <input type="number" class="form-control" placeholder="Phone Number" id="phone">
+                    </div>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-danger">Submit Order</button>
+                </form>
+                <div class="alert alert-success" id="submitted">
+                  Thank you, <span id="username"></span>! Your order will be ready for pickup in about 1 hour.
+                </div>
+              </div>
             </div>
           </div>
         </div>

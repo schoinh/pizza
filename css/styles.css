@@ -26,3 +26,25 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+#size-alert {
+  display: none;
+  margin-top: 1em;
+}
+
+#ordered-items {
+  text-align: left;
+}
+
+#total-print {
+  display: none;
+  text-align: right;
+}
+
+#submit-order {
+  display: none;
+}
+
+#submitted {
+  display: none;
+}
