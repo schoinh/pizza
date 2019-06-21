@@ -6,6 +6,15 @@ body {
   color: white;
 }
 
+img {
+  width: 200px;
+  border-radius: .25em;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 5px solid;
+  border-color: darkolivegreen;
+}
+
 .container {
   margin-bottom: 100px;
 }
@@ -15,6 +24,8 @@ body {
   margin-top: 20px;
   background-color: darkolivegreen;
   color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 h1 {
