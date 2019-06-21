@@ -38,18 +38,34 @@ Pizza.prototype.determineCost = function () {
   this.cost += sizeCosts[this.size];
 }
 
-var addTax = function (cost) {
+var addTax = function (cost) {    // Adds 10% Bellevue sales tax to total
   cost = cost + cost * 0.1;
   return cost.toFixed(2);
 }
 
 // UI Logic --------------------------
 
-var inputBasicTpgs = []
-var inputPremiumTpgs = []
-var newPizzaDetails = "";
+var inputBasicTpgs = [];
+var inputPremiumTpgs = [];
+var newPizzaDetails = "";;
 
-Pizza.prototype.formatDetails = function () {
+var getBasicTpgs = function () {    // Saves checkbox input for basic toppings into an array
+  inputBasicTpgs = []
+  $("input:checkbox[name=basic-toppings]:checked").each(function () {
+    var basicTpg = $(this).val();
+    inputBasicTpgs.push(basicTpg);
+  })
+}
+
+var getPremiumTpgs = function () {    // Saves checkbox input for premium toppings into an array
+  inputPremiumTpgs = []
+  $("input:checkbox[name=premium-toppings]:checked").each(function () {
+    var premiumTpg = $(this).val();
+    inputPremiumTpgs.push(premiumTpg);
+  })
+}
+
+Pizza.prototype.formatDetails = function () {   // Formats details of each pizza for Your Orders
   var formattedBasicTpgs = this.basicToppings.join(", ");
   var formattedPremTpgs = this.premiumToppings.join(", ");
 
@@ -60,22 +76,6 @@ Pizza.prototype.formatDetails = function () {
   var line5 = "<li>Premium Toppings: " + formattedPremTpgs + "</li></ul>";
 
   newPizzaDetails = line1 + line2 + line3 + line4 + line5;
-}
-
-var getBasicTpgs = function () {
-  inputBasicTpgs = []
-  $("input:checkbox[name=basic-toppings]:checked").each(function () {
-    var basicTpg = $(this).val();
-    inputBasicTpgs.push(basicTpg);
-  })
-}
-
-var getPremiumTpgs = function () {
-  inputPremiumTpgs = []
-  $("input:checkbox[name=premium-toppings]:checked").each(function () {
-    var premiumTpg = $(this).val();
-    inputPremiumTpgs.push(premiumTpg);
-  })
 }
 
 var newOrder = new Order();
@@ -95,16 +95,16 @@ $(function() {
     getBasicTpgs();
     getPremiumTpgs();
 
-    if (inputSize === "none") {
+    if (inputSize === "none") {   // Issues alert when a size is not chosen
       $("#size-alert").fadeIn();
     } else {
       var newPizza = new Pizza(inputCrust, inputBasicTpgs, inputPremiumTpgs, inputSize);    // Adds new pizza to order
       newOrder.addPizza(newPizza);
       
       newPizza.formatDetails();
-      $("#ordered-items").append(newPizzaDetails);
+      $("#ordered-items").append(newPizzaDetails);    // Adds details of newly built pizza to Your Orders
 
-      $("#order-total").text(" $" + (newOrder.total).toFixed(2));
+      $("#order-total").text(" $" + (newOrder.total).toFixed(2));   // Displays order total, tax, and total + tax
       $("#tax").text(" $" + (newOrder.total * 0.1).toFixed(2));
       $("#final-total").text(" $" + addTax(newOrder.total));
       $("#total-print, #submit-order").show();
@@ -114,16 +114,16 @@ $(function() {
     }
   });
 
-  $("form#contact-info").submit(function(event) {
+  $("form#contact-info").submit(function(event) {   // When final order is submitted...
     event.preventDefault();
 
     var inputName = $("input#name").val();
     var inputNumber = $("input#phone").val();
 
-    if (inputName && inputNumber) {
+    if (inputName && inputNumber) {   // Notifies customer of successful order submission
       $("#username").text(inputName);
       $("#submitted").fadeIn();
-    } else {
+    } else {    // No notification (nothing happens) when customer info is incomplete
       return;
     }
   })
