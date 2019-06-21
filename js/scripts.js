@@ -86,9 +86,9 @@ $(function() {
     $(".card").slideDown();
   })
   
-
   $("form.build-pizza").submit(function(event) {    // When "Add to Order" button is clicked...
     event.preventDefault();
+    $("#hazy").hide();
 
     var inputSize = $("#size").val();   // Saves input as variables
     var inputCrust = $("#crust").val();

@@ -1,10 +1,24 @@
 body {
   margin: auto;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: darkred;
+  color: white;
 }
 
 .container {
   margin-bottom: 100px;
+}
+
+.jumbotron {
+  font-family: 'Pacifico', cursive;
+  margin-top: 20px;
+  background-color: darkolivegreen;
+  color: white;
+}
+
+h1 {
+  font-family: 'Abril Fatface', cursive;
 }
 
 .first-letter {
@@ -20,6 +34,7 @@ body {
   display: none;
   margin-top: 30px;
   min-height: 600px;
+  color: black;
 }
 
 .form-group {
@@ -47,4 +62,8 @@ body {
 
 #submitted {
   display: none;
+}
+
+#hazy {
+  color: gray;
 }
