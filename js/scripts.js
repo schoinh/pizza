@@ -39,6 +39,7 @@ Pizza.prototype.determineCost = function () {
 }
 
 // UI Logic --------------------------
+
 var inputBasicTpgs = []
 var inputPremiumTpgs = []
 
@@ -56,11 +57,14 @@ var getPremiumTpgs = function () {
   })
 }
 
+var newOrder = new Order();
+
 $(function() {
   $("#order-start").click(function() {
     $("#order-start").hide();
     $(".card").slideDown();
   })
+  
 
   $("form.build-pizza").submit(function(event) {
     event.preventDefault();
@@ -69,5 +73,8 @@ $(function() {
     var inputCrust = $("#crust").val();
     getBasicTpgs();
     getPremiumTpgs();
+
+    var newPizza = new Pizza(inputCrust, inputBasicTpgs, inputPremiumTpgs, inputSize);
+    newOrder.addPizza(newPizza);
   })
 })
