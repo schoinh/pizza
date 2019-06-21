@@ -25,12 +25,12 @@
       <h5>We Deliver!</h5>
       <p>Place an order online for pickup or delivery.</p>
       <button class="btn btn-danger" id="order-start">Place Order</button>
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col col-lg-6" id="build-pizza">
+      <div class="row">
+        <div class="col col-lg-6 build-pizza">
+          <div class="card">
+            <div class="card-body">
               <h5>Build Your Pizza</h5>
-              <form>
+              <form class="build-pizza">
                 <div class="form-group">
                   <select class="form-control" id="size">
                     <option selected>Choose a Size</option>
@@ -84,9 +84,14 @@
                     </div>
                   </div>
                 </div>
+                <button type="submit" class="btn btn-danger">Add to Order</button>
               </form>
             </div>
-            <div class="col col-lg-6">
+          </div>
+        </div>
+        <div class="col col-lg-6 your-order">
+          <div class="card">
+            <div class="card-body">
               <h5>Your Order</h5>
             </div>
           </div>

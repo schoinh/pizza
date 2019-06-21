@@ -42,6 +42,10 @@ Pizza.prototype.determineCost = function () {
 
 $(function() {
   $("#order-start").click(function() {
+    $("#order-start").hide();
     $(".card").slideDown();
+  })
+  $("form.build-pizza").submit(function(event) {
+    event.preventDefault();
   })
 })

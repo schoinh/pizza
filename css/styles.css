@@ -17,8 +17,9 @@ body {
 }
 
 .card {
-  /* display: none; */
+  display: none;
   margin-top: 30px;
+  min-height: 600px;
 }
 
 .form-group {
