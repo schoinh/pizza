@@ -1,10 +1,10 @@
 // Business Logic --------------------
 
 var sizeCosts = {   // Base cost for a pizza depending on its size
-  small: 5,
-  medium: 8,
-  large: 11,
-  xLarge: 14
+  small: 6,
+  medium: 9,
+  large: 12,
+  xLarge: 15
 }
 
 function Order() {
@@ -41,5 +41,7 @@ Pizza.prototype.determineCost = function () {
 // UI Logic --------------------------
 
 $(function() {
-
+  $("#order-start").click(function() {
+    $(".card").slideDown();
+  })
 })

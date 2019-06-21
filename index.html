@@ -10,17 +10,88 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Bagheera's Pizzeria</h1>
+        <h1 class="display-2">Bagheera's Pizzeria</h1>
         <h5>Making You and Your Cats' Pizza Dreams Come True Since 2018</h5>
       </div>
       <p>
-        Welcome to Bagheera's Pizzeria, a pet-friendly destination for pizza lovers. Our pizzas are made with vegetables AND meat straight from our farm. If we don't grow it ourselves, we source local and organic whenever possible.
+        <span class="first-letter">W</span>elcome to Bagheera's Pizzeria, a pet-friendly destination for pizza lovers. Our pizzas are made with vegetables <i>and</i> meat straight from our farm. If we don't grow it ourselves, we source local and organic whenever possible.
       </p><p>
-        In our kitchen, each ingredient is carefully inspected and the creation of each pizza closely supervised by Bagheera Choi, a 2-year-old black cat with a most discerning palate. Each finished creation is taste-tested in the kitchen by Caramel Choi, a 1-year-old brown tabby cat who <span class="cross-out">will eat literally anything</span> is the winner of the prestigious 2019 Feline Foodie Award. 
+        <span class="first-letter">I</span>n our kitchen, each ingredient is carefully inspected and the creation of each pizza closely supervised by Bagheera Choi, a 2-year-old black cat with a most discerning palate. Each finished creation is taste-tested in the kitchen by Caramel Choi, a 1-year-old brown tabby cat who <s>will eat literally anything</s> is the winner of the prestigious 2019 Feline Foodie Award. 
+      </p>
+      <p id="stop-in">
+        Stop in today and taste for yourself why humans and non-humans alike call our pizzas the CAT'S MEOW.
       </p>
       <hr>
       <h5>We Deliver!</h5>
-      <button class="btn btn-danger">Place an Order for Pickup or Delivery</button>
+      <p>Place an order online for pickup or delivery.</p>
+      <button class="btn btn-danger" id="order-start">Place Order</button>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col col-lg-6" id="build-pizza">
+              <h5>Build Your Pizza</h5>
+              <form>
+                <div class="form-group">
+                  <select class="form-control" id="size">
+                    <option selected>Choose a Size</option>
+                    <option value="small">Small (9") - $6</option>
+                    <option value="medium">Medium (12") - $9
+                    </option>
+                    <option value="large">Large (14") - $12</option>
+                    <option value="xLarge">X-Large (16") - $15</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select class="form-control" id="crust">
+                    <option value="standard">Classic Crust</option>
+                    <option value="gluten-free">Gluten-Free Crust - Add $1.50
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <h6>Classic Toppings ($1 Each)</h6>
+                  <div class="row">
+                    <div class="col">
+                      <input type="checkbox" name="basic-toppings" value="pepperoni"> Pepperoni<br>
+                      <input type="checkbox" name="basic-toppings" value="sausage"> Sausage<br>
+                      <input type="checkbox" name="basic-toppings" value="chicken"> Chicken<br>
+                      <input type="checkbox" name="basic-toppings" value="ham"> Ham<br>
+                      <input type="checkbox" name="basic-toppings" value="black-olives"> Black Olives<br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="basic-toppings" value="green-peppers"> Green peppers<br>
+                      <input type="checkbox" name="basic-toppings" value="onions"> Onions<br>
+                      <input type="checkbox" name="basic-toppings" value="mushrooms"> Mushrooms<br>
+                      <input type="checkbox" name="basic-toppings" value="pineapple"> Pineapple<br>
+                      <input type="checkbox" name="basic-toppings" value="spinach"> Spinach<br>
+                      <input type="checkbox" name="basic-toppings" value="tomatoes"> Tomatoes<br>
+                    </div>
+                  </div>
+                  <br>
+                  <h6>Premium Toppings ($2 Each)</h6>
+                  <div class="row">
+                    <div class="col">
+                      <input type="checkbox" name="premium-toppings" value="prosciutto"> Prosciutto<br>
+                      <input type="checkbox" name="premium-toppings" value="anchovies"> Anchovies<br>
+                      <input type="checkbox" name="premium-toppings" value="kalamata"> Kalamata Olives<br>
+                      <input type="checkbox" name="premium-toppings" value="feta"> Feta Cheese<br>
+                    </div>
+                    <div class="col">
+                      <input type="checkbox" name="premium-toppings" value="arugula"> Arugula<br>
+                      <input type="checkbox" name="premium-toppings" value="basil"> Basil<br>
+                      <input type="checkbox" name="premium-toppings" value="asparagus"> Asparagus<br>
+                      <input type="checkbox" name="basic-toppings" value="artichoke"> Artichoke<br>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col col-lg-6">
+              <h5>Your Order</h5>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
