@@ -6,15 +6,14 @@
 
 ## Description
 
-On this web site, the user can choose individual toppings and a size to order a pizza and see the final cost.
+On this web site, the user can choose toppings and a size for one or more pizzas and see the final cost.
 
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Creates a new pizza through the Pizza constructor** | var pizza1 = new Pizza (["cheese", "sausage"], "large") | pizza1 = { toppings: ["cheese", "sausage"], size : "large", cost: undefined} |
-| **Calculates cost through a Pizza method** | pizza1.determineCost() | pizza1.cost = 17 |
+| **Creates a new pizza through a constructor** | var pizza1 = new Pizza ("large", ["cheese", "sausage"]) | pizza1 = { size : "large", toppings: ["cheese", "sausage"], cost: undefined} |
+| **Calculates cost through a method** | pizza1.determineCost() | pizza1.cost = 17 |
 | **Creates multiple pizzas for a given order** | newOrder.addPizza() | newOrder = { pizzas: [pizza1, pizza2], total: 34} |
-
 
 ## Setup/Installation Requirements
 
