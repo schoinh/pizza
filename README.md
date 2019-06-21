@@ -1,4 +1,4 @@
-# Pizzeria
+# Bagheera's Pizzeria
 
 #### _A web site for ordering pizza - June 21, 2019_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-On this web site, the user can choose toppings and a size for one or more pizzas and see the final cost.
+On this web site, the user can choose toppings and a size for one or more pizzas, see the final cost, and "place an order."
 
 ### Specs
 | Spec | Input | Output |
@@ -15,6 +15,7 @@ On this web site, the user can choose toppings and a size for one or more pizzas
 | **Calculates cost through a method** | pizza1.determineCost() | pizza1.cost = 17 |
 | **Adds multiple pizzas, with unique IDs, into a given order** | newOrder.addPizza(pizza2) | newOrder = { pizzas: [pizza1, pizza2], total: undefined}; pizza2.id = 1|
 | **Calculates total cost for a given order** | newOrder.addPizza(pizza2) | newOrder = { pizzas: [pizza1, pizza2], total: 34} |
+| **Accommodates premium toppings and gluten-free crust** | var pizza3 = new Pizza ("glutenFree", ["cheese", "pepperoni"], ["prociutto", "roasted garlic"], "large") | pizza3.cost = SOMETHING!!!!!!!!!!!! |
 
 ## Setup/Installation Requirements
 
