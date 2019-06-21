@@ -118,7 +118,13 @@ $(function() {
     event.preventDefault();
 
     var inputName = $("input#name").val();
-    $("#username").text(inputName);
-    $("#submitted").fadeIn();
+    var inputNumber = $("input#phone").val();
+
+    if (inputName && inputNumber) {
+      $("#username").text(inputName);
+      $("#submitted").fadeIn();
+    } else {
+      return;
+    }
   })
 });
