@@ -1,6 +1,6 @@
 // Business Logic --------------------
 
-var sizeCosts = {
+var sizeCosts = {   // Base cost for a pizza depending on its size
   small: 5,
   medium: 8,
   large: 11,
@@ -14,23 +14,27 @@ function Order() {
 }
 
 Order.prototype.addPizza = function (pizza) {
-  pizza.id = this.currentId;
+  pizza.id = this.currentId;    // Assigns unique ID and calculates cost upon adding a pizza to the order
   pizza.determineCost();
-  this.total += pizza.cost;
   this.pizzas.push(pizza);
+  this.total += pizza.cost;   // Updates total cost for the order
   this.currentId += 1;
 }
 
-function Pizza(basicToppings, premiumToppings, size, cost) {
+function Pizza(crust, basicToppings, premiumToppings, size, cost) {
   this.id;
+  this.crust = crust;
   this.basicToppings = basicToppings;
   this.premiumToppings = premiumToppings;
   this.size = size;
-  this.cost;
+  this.cost = 0;
 }
 
 Pizza.prototype.determineCost = function () {
-  this.cost = 1 * this.basicToppings.length + 2 * this.premiumToppings.length;
+  if (this.crust === "glutenFree") {    // Gluten-free crust costs $1.50 extra
+    this.cost += 1.5;
+  }
+  this.cost += (1 * this.basicToppings.length + 2 * this.premiumToppings.length);    // Charges $1 for each basic and $2 for each premium topping
   this.cost += sizeCosts[this.size];
 }
 
