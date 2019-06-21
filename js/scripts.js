@@ -39,13 +39,35 @@ Pizza.prototype.determineCost = function () {
 }
 
 // UI Logic --------------------------
+var inputBasicTpgs = []
+var inputPremiumTpgs = []
+
+var getBasicTpgs = function () {
+  $("input:checkbox[name=basic-toppings]:checked").each(function () {
+    var basicTpg = $(this).val();
+    inputBasicTpgs.push(basicTpg);
+  })
+}
+
+var getPremiumTpgs = function () {
+  $("input:checkbox[name=premium-toppings]:checked").each(function () {
+    var premiumTpg = $(this).val();
+    inputPremiumTpgs.push(premiumTpg);
+  })
+}
 
 $(function() {
   $("#order-start").click(function() {
     $("#order-start").hide();
     $(".card").slideDown();
   })
+
   $("form.build-pizza").submit(function(event) {
     event.preventDefault();
+
+    var inputSize = $("#size").val();
+    var inputCrust = $("#crust").val();
+    getBasicTpgs();
+    getPremiumTpgs();
   })
 })
