@@ -121,10 +121,11 @@ $(function() {
     var inputNumber = $("input#phone").val();
 
     if (inputName && inputNumber) {   // Notifies customer of successful order submission
+      $("#contact-alert").hide();
       $("#username").text(inputName);
       $("#submitted").fadeIn();
-    } else {    // No notification (nothing happens) when customer info is incomplete
-      return;
+    } else {    // Displays alert when customer info is incomplete
+      $("#contact-alert").fadeIn();
     }
   })
 });
